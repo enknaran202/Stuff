@@ -3,7 +3,7 @@
  *The Password is: MyPassword
  */
 import java.util.Scanner;
-public class ThreeThreeAssignment {
+public class ThreeThree {
 
 	public static void main(String[] args) {
 	String Username, Password;
