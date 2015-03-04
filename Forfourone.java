@@ -32,7 +32,7 @@ public class Forfourone {
 	public static void main(String [] args){
 	String Username, Password;
 	Scanner k1=new Scanner(System.in);
-			for(int i=0; i<3; i++){
+			for(int i=0; i<4; i++){
 				System.out.println("Enter Your Username");
 				Username=k1.next();
 				System.out.println("Enter Your Password");
