@@ -1,0 +1,39 @@
+/*2.1 If numPeople is greater than 10, execute groupSize =  numPeople/2. 
+If numPeople is between 3 and 10, execute groupSize = numPeople/3 and. 
+Otherwise, display message "The number of people has to be at least 3." 
+
+2.2 If numPlayers is between 11 and 55, execute teamSize = numPlayers/11. Otherwise, execute teamSize = 1.
+Requirements
+    Prompt the user to enter number of people with JOptionPane
+    Prompt the user to enter number of players with JOptionPane
+    Display the number of people and group size
+    Display the number of player and team size
+    Use VI and terminal
+Submit on Github
+*/
+import javax.swing.JOptionPane;
+public class ThreeFour {
+	public static void main(String[] args){
+		String people=JOptionPane.showInputDialog("Enter the Number of Students");
+		short speople=Short.parseShort(people);
+		int sgroupsize, sremaining, steamsize;
+			if(speople>10){
+				sgroupsize=speople/2;
+				sremaining=speople%2;
+				JOptionPane.showMessageDialog(null,"Your group size is "+ sgroupsize+" with "+ sremaining+" remaining." );
+			}else if(speople<=10 && speople>=3){
+				sgroupsize=speople/3;
+				sremaining=speople&3;
+				JOptionPane.showMessageDialog(null,"Your group size is "+ sgroupsize+" with "+ sremaining+" remaining.");
+			}else{JOptionPane.showMessageDialog(null,"Your group size must be at least 3.");}
+		String peopletwo=JOptionPane.showInputDialog("Enter the Number of Students");
+			short speopletwo=Short.parseShort(peopletwo);
+			if(speopletwo>11 && speopletwo<55){
+				steamsize=speopletwo/11;
+				sremaining=speopletwo%11;
+				JOptionPane.showMessageDialog(null,"Your group size is "+ steamsize+" with "+ sremaining+" remaining.");
+			}else{JOptionPane.showMessageDialog(null,"Your team size is 1");
+				
+			}
+	}
+}
