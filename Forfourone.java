@@ -28,24 +28,33 @@ Requirement
 5. Do not use Eclipse.
 */
 import java.util.Scanner;
-public class Forfourone {
+class Forfourone {
 	public static void main(String [] args){
 	String Username, Password;
 	Scanner k1=new Scanner(System.in);
+		System.out.println("This section will use for.");
 			for(int i=0; i<4; i++){
 				System.out.println("Enter Your Username");
 				Username=k1.next();
 				System.out.println("Enter Your Password");
-				Username=k1.next();
-					if (Username.equals("EnkNaran")){
-						if (Password.equalsIgnoreCase("MyPassword")){
+				Password=k1.next();
+					if (Username.equalsIgnoreCase("EnkNaran") && (Password.equals("MyPassword"))){
 							System.out.println("Welcome EnkNaran");
+							break;
 						}else{
 							System.out.println ("Incorrect Username and or Password. Try Again");
 					
-					}}
-					if (i==4){ System.out.println("Please Contact your Administrator");
+					}
+					if (i==3){ System.out.println("Please Contact your Administrator");
 						
 					}
 				
-}}}
+}
+		System.out.println("This section will use while");
+			do{System.out.println("Enter Your Username");
+				Username=k1.next();
+				System.out.println("Enter Your Password");
+				Password=k1.next();}
+			while((Username!="EnkNaran") && (Password!="MyPassword"));
+			System.out.println("Welcome EnkNaran");
+}}
