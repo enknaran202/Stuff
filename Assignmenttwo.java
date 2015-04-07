@@ -12,18 +12,19 @@ public class assignmenttwo {
 			System.out.println("3.5*(5/4) equals "+3.5*(5/4));
 			System.out.println("(3.5*5)/4 equals "+(3.5*5)/4);
 			
-			System.out.println("Type in five numbers using spaces as a delimiter");
-			Scanner s = new Scanner(System.in).useDelimiter("\\s|\n");
-			one=s.nextDouble();
+			System.out.println("Type in five numbers using spaces as a delimiter"); //tells user what to input
+			Scanner s = new Scanner(System.in).useDelimiter("\\s|\n");				//use space and enter as delimiter
+			one=s.nextDouble();														//saves to variable. same for all numbers
 			two=s.nextDouble();
 			three=s.nextDouble();
 			four=s.nextDouble();
 			five=s.nextDouble();
 			s.close(); 
-			sum=one+two+three+four+five;
-			av=(one+two+three+four+five)/5;
+			sum=one+two+three+four+five;											//sum of numbers
+			av=(one+two+three+four+five)/5;											//average of numbers
 	     
 			System.out.println("The sum of the numbers is "+sum+". And the average of the numbers is "+av+".");
+			//output sum and numbers
 		}
 
 }
