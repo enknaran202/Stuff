@@ -1,0 +1,10 @@
+package asdf;
+
+public class AssignmentSix {
+
+	public static void main(String[] args) {
+		ScoreGui program=new ScoreGui();
+
+	}
+
+}
