@@ -1,0 +1,71 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+public class ScoreGui extends JFrame implements ActionListener{
+	Double [] dblScore= new Double[4];
+	Double [] dblWeight= new Double[4];	
+	JButton calculate=new JButton("Calculate");
+	JPanel namePanel=new JPanel();
+	JPanel backPanel=new JPanel();
+	JPanel labelPanel=new JPanel();
+	JPanel scorePanel= new JPanel();
+	JPanel weightPanel=new JPanel();
+	JPanel buttonPanel=new JPanel();
+	JTextField tfName=new JTextField("Enter Your Name",20);
+	JTextField [] tfScore=new JTextField [4];
+	JTextField [] tfWeight=new JTextField [4];
+	JLabel output=new JLabel("Your Average Score");
+	JLabel[] extraLabels=new JLabel[4];{
+		extraLabels[0]=new JLabel("Assignments");
+		extraLabels[1]=new JLabel("Midterm Exam");
+		extraLabels[2]=new JLabel("Final Project");
+		extraLabels[3]=new JLabel("Final Exam");
+	}
+
+	public ScoreGui(){
+		backPanel.setBackground(Color.GRAY);
+		backPanel.setLayout(new GridLayout(1,3));
+		scorePanel.setLayout(new GridLayout(4,1));
+		weightPanel.setLayout(new GridLayout(4,1));
+		labelPanel.setLayout(new GridLayout(4,1));
+	
+		namePanel.add(tfName);
+		backPanel.add(labelPanel);
+		backPanel.add(scorePanel);
+		backPanel.add(weightPanel);
+	for (int i=0; i<4; i++){
+		labelPanel.add(extraLabels[i]);
+		tfScore[i]=new JTextField(8);
+		scorePanel.add(tfScore[i]);
+		tfWeight[i]=new JTextField(8);
+		weightPanel.add(tfWeight[i]);
+	}
+
+	buttonPanel.setBackground(Color.GRAY);
+	calculate.addActionListener(this);
+	buttonPanel.add(calculate);
+	buttonPanel.add(output);
+	add(namePanel, BorderLayout.NORTH);
+	add(backPanel, BorderLayout.CENTER);
+	add(buttonPanel, BorderLayout.SOUTH);
+
+	setVisible(true);
+	pack();
+	setLocationRelativeTo(null);
+	}
+
+
+public void actionPerformed(ActionEvent e) {
+	double answer = 0;
+	for(int i=0; i<4; i++){
+		dblScore[i]= Double.parseDouble(tfScore[i].getText());
+		dblWeight[i]= Double.parseDouble(tfWeight[i].getText());
+	}
+	answer=(dblScore[0]*dblWeight[0])+(dblScore[1]*dblWeight[1])+(dblScore[2]*dblWeight[2])+(dblScore[3]*dblWeight[3]);
+	System.out.println(dblScore[0]);
+	String stringAnswer=Double.toString(answer);
+	output.setText(stringAnswer);
+		
+	}
+}
