@@ -1,0 +1,44 @@
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+public class SevenOneDriver extends JFrame implements ActionListener{
+	private JPanel flow=new JPanel();
+	private JButton save=new JButton("Put Them In Order");
+	private JLabel output=new JLabel ("Answer");
+	TextField [] tf=new TextField [5]; {
+		tf[0]=new TextField("",20);
+		tf[1]=new TextField("",20);
+		tf[2]=new TextField("",20);
+		tf[3]=new TextField("",20);
+		tf[4]=new TextField("",20);
+		}
+	
+
+	
+	public void flow() {
+		flow.setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(new Dimension(500,500));
+		flow.add(tf[0]);
+		flow.add(tf[1]);
+		flow.add(tf[2]);
+		flow.add(tf[3]);
+		flow.add(tf[4]);
+		flow.add(save);
+		flow.add(output);
+		add(flow);
+		
+		save.addActionListener(this);
+	}
+	public void actionPerformed(ActionEvent e) {
+		SevenOne.unsortedList[0]=Integer.parseInt(tf[0].getText());
+		SevenOne.unsortedList[1]=Integer.parseInt(tf[1].getText());
+		SevenOne.unsortedList[2]=Integer.parseInt(tf[2].getText());
+		SevenOne.unsortedList[3]=Integer.parseInt(tf[3].getText());
+		SevenOne.unsortedList[4]=Integer.parseInt(tf[4].getText());
+	}
+}
+
+
+
